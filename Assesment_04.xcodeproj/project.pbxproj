@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2978BE791E24CB4000945D85 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2978BE781E24CB4000945D85 /* Storyboard.storyboard */; };
 		29D1ADD31E23BCAC00C26093 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D1ADD21E23BCAC00C26093 /* AppDelegate.swift */; };
 		29D1ADD51E23BCAC00C26093 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D1ADD41E23BCAC00C26093 /* ViewController.swift */; };
 		29D1ADD81E23BCAC00C26093 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D1ADD61E23BCAC00C26093 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2978BE781E24CB4000945D85 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		29D1ADCF1E23BCAC00C26093 /* Assesment_04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assesment_04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29D1ADD21E23BCAC00C26093 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29D1ADD41E23BCAC00C26093 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		29D1ADC61E23BCAC00C26093 = {
 			isa = PBXGroup;
 			children = (
+				2978BE781E24CB4000945D85 /* Storyboard.storyboard */,
 				29D1ADD11E23BCAC00C26093 /* Assesment_04 */,
 				29D1ADD01E23BCAC00C26093 /* Products */,
 			);
@@ -128,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29D1ADDD1E23BCAC00C26093 /* LaunchScreen.storyboard in Resources */,
+				2978BE791E24CB4000945D85 /* Storyboard.storyboard in Resources */,
 				29D1ADDA1E23BCAC00C26093 /* Assets.xcassets in Resources */,
 				29D1ADD81E23BCAC00C26093 /* Main.storyboard in Resources */,
 			);
@@ -208,7 +212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -252,7 +256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

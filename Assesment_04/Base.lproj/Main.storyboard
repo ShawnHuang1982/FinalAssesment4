@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7R5-uq-c6V">
-                                <rect key="frame" x="20" y="40" width="335" height="607"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7R5-uq-c6V">
+                                <rect key="frame" x="46" y="40" width="335" height="607"/>
                                 <color key="backgroundColor" red="0.99894136190000005" green="0.85476401769999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="xjz-rk-Y8v">
                                     <size key="itemSize" width="187" height="187"/>
@@ -38,9 +38,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="187" height="187"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ch-zn-CRM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="0ch-zn-CRM">
                                                     <rect key="frame" x="0.0" y="0.0" width="187" height="187"/>
-                                                    <color key="backgroundColor" red="0.53333333329999999" green="0.80784313730000001" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -50,12 +49,10 @@
                                         <color key="backgroundColor" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="0ch-zn-CRM" firstAttribute="top" secondItem="mE9-TI-LDr" secondAttribute="top" id="6pp-MU-lzP"/>
-                                            <constraint firstItem="0ch-zn-CRM" firstAttribute="leading" secondItem="mE9-TI-LDr" secondAttribute="leading" id="7XU-jY-k4D"/>
-                                            <constraint firstItem="0ch-zn-CRM" firstAttribute="centerY" secondItem="mE9-TI-LDr" secondAttribute="centerY" id="HPX-Oc-2dn"/>
-                                            <constraint firstAttribute="bottom" secondItem="0ch-zn-CRM" secondAttribute="bottom" id="MZa-bY-H1p"/>
-                                            <constraint firstItem="0ch-zn-CRM" firstAttribute="centerX" secondItem="mE9-TI-LDr" secondAttribute="centerX" id="dYo-l2-d4U"/>
-                                            <constraint firstAttribute="trailing" secondItem="0ch-zn-CRM" secondAttribute="trailing" id="g97-Pt-JlK"/>
+                                            <constraint firstAttribute="bottom" secondItem="0ch-zn-CRM" secondAttribute="bottom" id="Apa-jZ-SNs"/>
+                                            <constraint firstItem="0ch-zn-CRM" firstAttribute="top" secondItem="mE9-TI-LDr" secondAttribute="top" id="Ybz-tG-lwa"/>
+                                            <constraint firstItem="0ch-zn-CRM" firstAttribute="leading" secondItem="mE9-TI-LDr" secondAttribute="leading" id="oau-Hy-ptr"/>
+                                            <constraint firstAttribute="trailing" secondItem="0ch-zn-CRM" secondAttribute="trailing" id="rd9-jU-aoI"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="labelForCellText" destination="0ch-zn-CRM" id="I6f-uV-HbR"/>
