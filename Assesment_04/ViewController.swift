@@ -9,6 +9,7 @@
 import UIKit
 import CoreMotion //計算步數用
 import MessageUI //開啟mail用
+import NotificationCenter
 
 class ViewController: UIViewController {
     
@@ -20,12 +21,7 @@ class ViewController: UIViewController {
     //var motionManager = CMMotionManager()
     let pedoMeter = CMPedometer()
     let date = Date()
- //   let data:CMPedometer!
-    
-    
-    
     @IBOutlet weak var myCollectionView: UICollectionView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,18 +29,18 @@ class ViewController: UIViewController {
         myCollectionView.dataSource = self
         myCollectionView.delegate = self
     
-     //   motionManager.startAccelerometerUpdates()
-        
-//        if CMMotionActivityManager.isActivityAvailable(){
-//            self.activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: { (data) -> Void in
-//                DispatchQueue.main.async {
-//                    print("更新資料",data?.walking)
-//                }
-//            })
-//        }
-        
-        
-        //updateStepCounter()
+        //如果方向轉變,就要重新調整CollectionViewCell的大小
+        NotificationCenter.default.addObserver(self, selector: #selector(self.viewReload), name: .UIDeviceOrientationDidChange, object: nil)
+     
+        //測試速度是屬於走或是跑步或是開車
+        //   motionManager.startAccelerometerUpdates()
+        //        if CMMotionActivityManager.isActivityAvailable(){
+        //            self.activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: { (data) -> Void in
+        //                DispatchQueue.main.async {
+        //                    print("更新資料",data?.walking)
+        //                }
+        //            })
+        //        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +48,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func viewReload(){
+        print("重新載入collectionView的大小")
+        myCollectionView.reloadData()
+    }
+    
     func updateStepCounter(){
         /*if (CMMotionActivityManager.isActivityAvailable() ){
             self.activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: {
@@ -184,7 +185,7 @@ extension ViewController:UICollectionViewDataSource,UICollectionViewDelegate,UIC
             
             if MFMailComposeViewController.canSendMail() {
                 mailController.setSubject("測試信件")
-                mailController.setToRecipients(["smartwang.tw@gmail.com"])
+                mailController.setToRecipients(["123@123.com"])
                 mailController.setMessageBody("Test message body", isHTML: false)
                 mailController.mailComposeDelegate = self
             }
