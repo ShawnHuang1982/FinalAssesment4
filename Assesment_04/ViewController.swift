@@ -31,16 +31,6 @@ class ViewController: UIViewController {
     
         //如果方向轉變,就要重新調整CollectionViewCell的大小
         NotificationCenter.default.addObserver(self, selector: #selector(self.viewReload), name: .UIDeviceOrientationDidChange, object: nil)
-     
-        //測試速度是屬於走或是跑步或是開車
-        //   motionManager.startAccelerometerUpdates()
-        //        if CMMotionActivityManager.isActivityAvailable(){
-        //            self.activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: { (data) -> Void in
-        //                DispatchQueue.main.async {
-        //                    print("更新資料",data?.walking)
-        //                }
-        //            })
-        //        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,15 +44,6 @@ class ViewController: UIViewController {
     }
     
     func updateStepCounter(){
-        /*if (CMMotionActivityManager.isActivityAvailable() ){
-            self.activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: {
-                (data) in
-                if (data?.stationary == true ){
-                    print("步數")
-                    
-                }
-            })
-        }*/
         print("計步數process")
         if CMPedometer.isStepCountingAvailable(){
             print("計步中")
@@ -78,23 +59,6 @@ class ViewController: UIViewController {
         }else{
              (self.myCollectionView.cellForItem(at: [0,2]) as! CustomCollectionViewCell).labelForCellText.text = "該裝置不支援計步數"
         }
-        
-        //      self.pedoMeter.queryPedometerData(from: fromDate as Date, to: Date(), withHandler: {
-        //        self.pedoMeter.queryPedometerData(from: Date(), to: Date(), withHandler: {
-        //                (data, error) -> Void in
-        //                if (error == nil){
-        //                    print("計步數")
-        //                    let cell = self.myCollectionView.cellForItem(at: [0,2]) as! CustomCollectionViewCell
-        //                    cell.labelForCellText.text = "走幾步\(data?.numberOfSteps)"
-        //                    print("走幾步\(data?.numberOfSteps)")
-        //                    self.labelForStepCounter.text = "走幾步\(data?.numberOfSteps)"
-        //                }
-        //            })
-        //        }
-        //        else{
-        //        print("有問題")
-        //        }
-        
     }
 
 }
@@ -111,32 +75,18 @@ extension ViewController:UICollectionViewDataSource,UICollectionViewDelegate,UIC
         let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CustomCollectionViewCell
         cell.labelForCellText.text = cellArray[indexPath.row]
         cell.labelForCellText.backgroundColor = UIColor.clear
- //        print("\(myCollectionView.frame.width / 2)")
-//        cell.labelForCellText.translatesAutoresizingMaskIntoConstraints = false
         //label會歪掉,需再次autolayout一次,但是原本的autolayout還是要設定
         let horizontalConstraint = cell.labelForCellText.centerXAnchor.constraint(equalTo: cell.centerXAnchor)
         let verticalConstraint = cell.labelForCellText.centerYAnchor.constraint(equalTo: cell.centerYAnchor)
-//        let widthConstraint = cell.labelForCellText.widthAnchor.constraint(equalToConstant: 50)
-//        let heightConstraint = cell.labelForCellText.heightAnchor.constraint(equalToConstant: 50)
-//        cell.labelForCellText.frame.size.width = 50
- //       cell.labelForCellText.frame.size.height = 50
         NSLayoutConstraint.activate([horizontalConstraint,verticalConstraint])
-//        NSLayoutConstraint.activate([horizontalConstraint,verticalConstraint,widthConstraint,heightConstraint])
         print("---->",cell.labelForCellText.frame)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let dimension = myCollectionView.frame.width / 2
-        //let picDimension = (self.view.frame.width / 2)-20
-        //print("1",picDimension)
         print("cell寬度",dimension)
-//        return CGSize(width: picDimension, height: picDimension)
         return CGSize(width: dimension, height: dimension)
-
-        //  return CGSize(width: 200, height: 200)
-        
-//        layout.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width /3, [UIScreen mainScreen].bounds.size.width /3);
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -155,15 +105,8 @@ extension ViewController:UICollectionViewDataSource,UICollectionViewDelegate,UIC
             }else{
                 collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.blue
             }
-            //print(indexPath.item)
         case 2:
             print("2")
-//            self.pedoMeter.startUpdates()
-//            self.pedoMeter.startUpdates(from: Date(), withHandler: {
-//                (data , error) -> Void in
-//                print(data)
-//                print(error)
-//            })
             print(indexPath)
             self.updateStepCounter()
             
